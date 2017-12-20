@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">YUMMY SOSES</string>
+    <string name="sauce_recepts">Recepti za umake</string>
+    <string name="products">Proizvodi</string>
+    <string name="favourites">Favoriti</string>
+    <string name="add_recept">Dodaj svoj recept</string>
+
+
+    <string name="dont_like_it">NE SVIĐA MI SE</string>
+    <string name="like_it">SVIĐA MI SE</string>
+    <string name="sauce_ingredients">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eleifend erat id lectus pharetra sollicitudin. Donec nec massa dolor. Maecenas interdum turpis a neque malesuada, eu aliquet risus efficitur. Curabitur quis dui velit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec efficitur nec leo id efficitur. </string>
+    <string name="sauce_preparation">Donec id rutrum dolor. Proin eleifend tempus metus. Integer faucibus lobortis felis, vel pulvinar ante accumsan eget. Quisque imperdiet sollicitudin nibh.</string>
+</resources>
