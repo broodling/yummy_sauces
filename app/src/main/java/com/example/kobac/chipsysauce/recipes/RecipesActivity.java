@@ -1,7 +1,6 @@
 package com.example.kobac.chipsysauce.recipes;
 
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 
 import com.example.kobac.chipsysauce.BaseActivity;
@@ -9,6 +8,8 @@ import com.example.kobac.chipsysauce.R;
 import com.example.kobac.chipsysauce.api.API;
 import com.example.kobac.chipsysauce.api.APIResponse;
 import com.example.kobac.chipsysauce.api.APITask;
+import com.example.kobac.chipsysauce.recipes.views.RecipesViewPagerAdapter;
+import com.example.kobac.chipsysauce.recipes.views.TabView;
 
 import net.minidev.json.JSONArray;
 import net.minidev.json.JSONObject;
@@ -20,7 +21,6 @@ import java.util.ArrayList;
  */
 public class RecipesActivity extends BaseActivity {
 
-    private TabLayout mTabLayout;
     private ViewPager mViewPager;
 
     @Override
@@ -29,15 +29,6 @@ public class RecipesActivity extends BaseActivity {
         setContentView(R.layout.recipes_activity);
 
         mViewPager = (ViewPager) findViewById(R.id.viewpager);
-
-        mTabLayout = (TabLayout) findViewById(R.id.tabs);
-        mTabLayout.setupWithViewPager(mViewPager);
-        mTabLayout.getTabAt(0).setIcon(R.drawable.tab_item_hot);
-        mTabLayout.getTabAt(1).setIcon(R.drawable.tab_item_salty);
-        mTabLayout.getTabAt(2).setIcon(R.drawable.tab_item_sweet);
-        mTabLayout.getTabAt(3).setIcon(R.drawable.tab_item_sour);
-
-        mViewPager.setOffscreenPageLimit(4);
 
         // Execute API
         new APITask() {
@@ -115,6 +106,10 @@ public class RecipesActivity extends BaseActivity {
      */
     private void setupViewPagerAdapter(final ArrayList<ArrayList<RecipesModel>> saucesCompleteList) {
         RecipesViewPagerAdapter viewPagerAdapter = new RecipesViewPagerAdapter(getSupportFragmentManager(), saucesCompleteList);
+        mViewPager.setAdapter(viewPagerAdapter);
+
+        TabView tabView = (TabView) findViewById(R.id.tab_view);
+        tabView.setupWithViewPager(mViewPager);
     }
 
     /**
@@ -122,10 +117,10 @@ public class RecipesActivity extends BaseActivity {
      */
     public enum Sauces {
 
-        HOT(15),
-        SALTY(16),
-        SWEET(17),
-        SOUR(18);
+        HOT(15, R.drawable.tab_hot_active, R.drawable.tab_hot_inactive),
+        SALTY(16, R.drawable.tab_salty_active, R.drawable.tab_salty_inactive),
+        SWEET(17, R.drawable.tab_sweet_active, R.drawable.tab_sweet_inactive),
+        SOUR(18, R.drawable.tab_sour_active, R.drawable.tab_sour_inactive);
 
         /**
          * Id of the sauce.
@@ -133,12 +128,25 @@ public class RecipesActivity extends BaseActivity {
         public int id;
 
         /**
+         * The resource Id of the iconActive.
+         */
+        public int iconActive;
+
+        /**
+         * The resource Id of the iconInactive.
+         */
+        public int iconInactive;
+
+        /**
          * Initialize.
          *
-         * @param id The id of the sauce.
+         * @param id   The id of the sauce.
+         * @param iconActive The resource Id of the iconActive.
          */
-        Sauces(final int id) {
+        Sauces(final int id, final int iconActive, final int iconInactive) {
             this.id = id;
+            this.iconActive = iconActive;
+            this.iconInactive = iconInactive;
         }
     }
 

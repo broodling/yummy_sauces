@@ -1,4 +1,4 @@
-package com.example.kobac.chipsysauce;
+package com.example.kobac.chipsysauce.utils;
 
 import android.content.Context;
 import android.util.DisplayMetrics;

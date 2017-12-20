@@ -1,4 +1,4 @@
-package com.example.kobac.chipsysauce.recipes;
+package com.example.kobac.chipsysauce.recipes.views;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.kobac.chipsysauce.R;
+import com.example.kobac.chipsysauce.recipes.RecipesDetailsActivity;
+import com.example.kobac.chipsysauce.recipes.RecipesModel;
 
 import java.util.ArrayList;
 
@@ -36,7 +38,6 @@ public class RecipesListAdapter extends RecyclerView.Adapter<RecipesListAdapter.
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-
         final RecipesModel recipesModel = recipesList.get(position);
         holder.sauceName.setText(recipesModel.getSauceName());
         holder.recipesId = recipesModel.getSauceID();
@@ -48,7 +49,7 @@ public class RecipesListAdapter extends RecyclerView.Adapter<RecipesListAdapter.
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(holder.itemView.getContext(), RecipesDetails.class);
+                Intent intent = new Intent(holder.itemView.getContext(), RecipesDetailsActivity.class);
                 holder.itemView.getContext().startActivity(intent);
 
             }

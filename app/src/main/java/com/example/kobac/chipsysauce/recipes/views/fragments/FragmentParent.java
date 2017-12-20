@@ -1,4 +1,4 @@
-package com.example.kobac.chipsysauce.recipes.fragments;
+package com.example.kobac.chipsysauce.recipes.views.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

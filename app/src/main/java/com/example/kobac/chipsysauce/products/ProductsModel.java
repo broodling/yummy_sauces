@@ -21,23 +21,8 @@ public class ProductsModel {
         return productName;
     }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
     public String getProductImage() {
         return productImage;
     }
 
-    public void setProductImage(String productImage) {
-        this.productImage = productImage;
-    }
-
-    public String getProductId() {
-        return productId;
-    }
-
-    public void setProductId(String productId) {
-        this.productId = productId;
-    }
 }

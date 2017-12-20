@@ -1,10 +1,11 @@
-package com.example.kobac.chipsysauce.recipes;
+package com.example.kobac.chipsysauce.recipes.views;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.example.kobac.chipsysauce.recipes.fragments.SaucesListFragment;
+import com.example.kobac.chipsysauce.recipes.RecipesModel;
+import com.example.kobac.chipsysauce.recipes.views.fragments.SaucesListFragment;
 
 import java.util.ArrayList;
 
@@ -32,9 +33,5 @@ public class RecipesViewPagerAdapter extends FragmentStatePagerAdapter {
         return POSITION_NONE;
     }
 
-    @Override
-    public CharSequence getPageTitle(int position) {
-        return null;
-    }
 }
 
