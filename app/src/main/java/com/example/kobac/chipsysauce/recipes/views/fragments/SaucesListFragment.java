@@ -1,11 +1,12 @@
 package com.example.kobac.chipsysauce.recipes.fragments;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.example.kobac.chipsysauce.R;
+import com.example.kobac.chipsysauce.recipes.RecipesListAdapter;
 import com.example.kobac.chipsysauce.recipes.RecipesModel;
 
 import java.util.ArrayList;
@@ -15,7 +16,11 @@ import java.util.ArrayList;
  */
 public class SaucesListFragment extends FragmentParent {
 
-    public static SaucesListFragment getInstance(final ArrayList<RecipesModel> saucesList) {
+    private RecyclerView recyclerView;
+    private RecipesListAdapter mAdapter;
+    private LinearLayoutManager mLayotManager;
+
+    public static SaucesListFragment newInstance(final ArrayList<RecipesModel> saucesList) {
         Bundle bundle = new Bundle();
         bundle.putSerializable(Extras.SAUCES, saucesList);
         SaucesListFragment saucesListFragment = new SaucesListFragment();
@@ -26,6 +31,12 @@ public class SaucesListFragment extends FragmentParent {
 
     @Override
     protected void show(Bundle bundle, View view) {
+        ArrayList<RecipesModel> saucesList = (ArrayList<RecipesModel>) bundle.getSerializable(Extras.SAUCES);
+        // Show in recycle view TODO
+        recyclerView = (RecyclerView)view.findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(mLayotManager);
+        mAdapter.addItems(saucesList);
+        recyclerView.setAdapter(mAdapter);
 
     }
 
@@ -41,4 +52,6 @@ public class SaucesListFragment extends FragmentParent {
 
         public static final String SAUCES = "com.example.kobac.c";
     }
+
+
 }

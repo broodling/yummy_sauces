@@ -4,13 +4,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.example.kobac.chipsysauce.recipes.fragments.SaucesListFragment;
 
+import java.util.ArrayList;
 
 public class RecipesViewPagerAdapter extends FragmentStatePagerAdapter {
 
-    private final List<Fragment> mFragmentList = new ArrayList<>();
     private ArrayList<ArrayList<RecipesModel>> mSaucesCompleteList;
 
     public RecipesViewPagerAdapter(FragmentManager manager, final ArrayList<ArrayList<RecipesModel>> saucesCompleteList) {
@@ -20,19 +19,17 @@ public class RecipesViewPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-
-
-        return mFragmentList.get(position);
+        return SaucesListFragment.newInstance(mSaucesCompleteList.get(position));
     }
 
     @Override
     public int getCount() {
-        return mFragmentList.size();
+        return mSaucesCompleteList.size();
     }
 
-    public void addFragment(Fragment fragment) {
-        mFragmentList.add(fragment);
-        notifyDataSetChanged();
+    @Override
+    public int getItemPosition(Object object) {
+        return POSITION_NONE;
     }
 
     @Override
