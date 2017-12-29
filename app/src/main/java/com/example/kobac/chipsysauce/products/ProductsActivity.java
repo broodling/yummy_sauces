@@ -1,8 +1,6 @@
 package com.example.kobac.chipsysauce.products;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.support.annotation.Nullable;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -24,19 +22,21 @@ import java.util.ArrayList;
 public class ProductsActivity extends BaseActivity {
 
     private GridLayoutManager mGridManager;
-    private ProductsAdapter mAdapter;
+    private ProductsListAdapter mAdapter;
     private RecyclerView mRecyclerView;
 
+    private String productID;
+    private String productSauceID;
     private String productName;
     private String productImage;
-    private String productID;
+    private String productDescription;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recycler_view);
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        mAdapter = new ProductsAdapter(getApplicationContext(), new ArrayList<ProductsModel>());
+        mAdapter = new ProductsListAdapter(getApplicationContext(), new ArrayList<ProductsModel>());
         mGridManager = new GridLayoutManager(getApplicationContext(), 2);
         mRecyclerView.setLayoutManager(mGridManager);
 
@@ -61,7 +61,9 @@ public class ProductsActivity extends BaseActivity {
                     productName = fields.getAsString("name");
                     productImage = fields.getAsString("image");
                     productID = access.getAsString("id");
-                    ProductsModel productsModel = new ProductsModel(productName, productImage, productID);
+                    productSauceID = fields.getAsString("cms_sauce_set");
+                    productDescription = fields.getAsString("description");
+                    ProductsModel productsModel = new ProductsModel(productName, productImage, productID, productDescription, productSauceID);
                     productListModel.getList().add(productsModel);
 
                 }
