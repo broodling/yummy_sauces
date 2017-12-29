@@ -1,6 +1,7 @@
 package com.example.kobac.chipsysauce.products;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,11 +20,11 @@ import java.util.ArrayList;
 
 public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHolder> {
 
-    private Context context;
+    private Context mContext;
     ArrayList<ProductsModel> productList;
 
     public ProductsAdapter(Context context, ArrayList<ProductsModel> productList) {
-        this.context = context;
+        this.mContext = context;
         this.productList = productList;
     }
 
@@ -34,7 +35,7 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, int position) {
 
         final ProductsModel productsModel = productList.get(position);
         holder.productName.setText(productsModel.getProductName());
@@ -43,6 +44,15 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
 
         Glide.with(holder.productImage.getContext()).load(productsModel.getProductImage()).into(holder.productImage);
 //        .preload(R.drawable.loading_spinner)
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, ProductDetails.class);
+                intent
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
 
     }
 
