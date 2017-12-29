@@ -24,9 +24,11 @@
 
         <activity android:name=".recipes.RecipesActivity"></activity>
 
+        <activity android:name=".recipes.RecipesDetailsActivity"></activity>
+
         <activity android:name=".products.ProductsActivity"></activity>
 
-        <activity android:name=".recipes.RecipesDetailsActivity"></activity>
+        <activity android:name=".products.ProductDetailsActivity"></activity>
     </application>
 
 </manifest>

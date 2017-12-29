@@ -18,6 +18,7 @@ public class RecipesViewPagerAdapter extends FragmentStatePagerAdapter {
         mSaucesCompleteList = saucesCompleteList;
     }
 
+
     @Override
     public Fragment getItem(int position) {
         return SaucesListFragment.newInstance(mSaucesCompleteList.get(position));

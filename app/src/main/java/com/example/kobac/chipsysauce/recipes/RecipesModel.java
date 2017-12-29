@@ -4,19 +4,18 @@ import java.io.Serializable;
 
 public class RecipesModel implements Serializable {
 
-    private int sauceID;
+    private int sauceId;
     private String sauceImage;
     private String sauceName;
-    private String sauceType;
+    private int sauceType;
     private String sauceIngredient;
     private String saucePreparation;
     private String comentsCount;
     private String likeCount;
     private String dislikeCount;
 
-    public RecipesModel(int sauceID, String sauceImage, String sauceName, String sauceType,
-                        String sauceIngredient, String saucePreparation, String comentsCount, String likeCount, String dislikeCount) {
-        this.sauceID = sauceID;
+    public RecipesModel(int sauceId, String sauceImage, String sauceName, int sauceType, String sauceIngredient, String saucePreparation, String comentsCount, String likeCount, String dislikeCount) {
+        this.sauceId = sauceId;
         this.sauceImage = sauceImage;
         this.sauceName = sauceName;
         this.sauceType = sauceType;
@@ -36,9 +35,31 @@ public class RecipesModel implements Serializable {
         return sauceName;
     }
 
-
-    public int getSauceID() {
-        return sauceID;
+    public int getSauceType() {
+        return sauceType;
     }
 
+    public String getSauceIngredient() {
+        return sauceIngredient;
+    }
+
+    public String getSaucePreparation() {
+        return saucePreparation;
+    }
+
+    public String getComentsCount() {
+        return comentsCount;
+    }
+
+    public String getLikeCount() {
+        return likeCount;
+    }
+
+    public String getDislikeCount() {
+        return dislikeCount;
+    }
+
+    public int getSauceId() {
+        return sauceId;
+    }
 }

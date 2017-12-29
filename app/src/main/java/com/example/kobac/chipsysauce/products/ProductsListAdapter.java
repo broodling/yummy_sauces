@@ -18,12 +18,12 @@ import java.util.ArrayList;
  * Created by kobac on 14.12.17..
  */
 
-public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHolder> {
+public class ProductsListAdapter extends RecyclerView.Adapter<ProductsListAdapter.ViewHolder> {
 
     private Context mContext;
     ArrayList<ProductsModel> productList;
 
-    public ProductsAdapter(Context context, ArrayList<ProductsModel> productList) {
+    public ProductsListAdapter(Context context, ArrayList<ProductsModel> productList) {
         this.mContext = context;
         this.productList = productList;
     }
@@ -48,8 +48,8 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext, ProductDetails.class);
-                intent
+                Intent intent = new Intent(mContext, ProductDetailsActivity.class);
+                intent.putExtra(ProductDetailsActivity.PRODUCT_NAME, productsModel);
                 holder.itemView.getContext().startActivity(intent);
             }
         });

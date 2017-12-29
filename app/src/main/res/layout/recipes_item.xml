@@ -7,20 +7,34 @@
     android:layout_marginTop="15dp"
     android:background="@drawable/bg_item"
     android:orientation="vertical"
-    android:paddingBottom="5dp"
-    android:paddingLeft="5dp"
-    android:paddingRight="5dp"
-    android:paddingTop="5dp">
+    android:paddingBottom="5dp">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/sauceImage"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp" />
-    </LinearLayout>
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/sauceImage"
+                android:layout_width="match_parent"
+                android:layout_height="150dp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/favouriteButton"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/favorite_inactive"
+            android:textOff=""
+            android:textOn="" />
+    </RelativeLayout>
 
 
     <LinearLayout
@@ -33,17 +47,15 @@
             android:layout_weight="1">
 
             <ImageView
-                android:layout_marginLeft="10dp"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:background="@drawable/tag_new" />
 
             <TextView
-                android:id="@+id/sauceName"
+                android:id="@+id/sauceNameDetails"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:textColor="@color/bright_black"
                 android:layout_marginTop="10dp"
                 android:textSize="15dp"
                 android:textStyle="bold" />
@@ -51,16 +63,14 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
-            android:layout_weight="0.1"
             android:gravity="center_vertical">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:layout_marginLeft="5dp"
                 android:background="@drawable/ic_good_big" />
 

@@ -38,8 +38,8 @@ public class SaucesListFragment extends FragmentParent {
         recyclerView.setLayoutManager(mLayotManager);
         mAdapter = new RecipesListAdapter(getContext(), saucesList);
         recyclerView.setAdapter(mAdapter);
-
     }
+
 
     @Override
     public int defineLayout() {

@@ -38,7 +38,7 @@ public class ProductDetailsActivity extends BaseActivity {
 
         productName = (TextView) findViewById(R.id.productDetailName);
         productDescription = (TextView) findViewById(R.id.productDetailDescription);
-        productImage = (ImageView) findViewById(R.id.productDetailImage);https://github.com/broodling/yummy_sauces/blob/master/app/src/main/java/com/example/kobac/chipsysauce/recipes/views/RecipesListAdapter.java
+        productImage = (ImageView) findViewById(R.id.productDetailImage);
         numOfSauces = (Button) findViewById(R.id.numOfSauces);
 
         final Intent intent = getIntent();

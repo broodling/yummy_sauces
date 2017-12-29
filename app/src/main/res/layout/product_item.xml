@@ -34,7 +34,6 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="DOMACINSKI"
             android:textColor="@color/white"
             android:textSize="15dp"
             android:textStyle="bold" />

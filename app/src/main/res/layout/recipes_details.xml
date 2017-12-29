@@ -10,8 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="15dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:layout_marginTop="15dp"
         android:layout_weight="1"
         android:background="@color/white"
@@ -21,21 +21,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/sauceImage"
-                android:layout_width="wrap_content"
-                android:layout_height="150dp"
-                android:layout_margin="6dp"
-                android:background="@drawable/menta_sos" />
+            <LinearLayout
+                android:id="@+id/imageHolder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/sauceImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_marginTop="5dp" />
+
+            </LinearLayout>
+
 
             <ImageView
-                android:id="@+id/favouriteButton"
+                android:src="@drawable/favorite_inactive"
+                android:id="@+id/favouriteButtonDetails"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignEnd="@+id/sauceImage"
+                android:layout_alignParentEnd="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginEnd="8dp"
-                android:background="@drawable/favorite_inactive" />
+                android:layout_marginEnd="15dp"/>
 
         </RelativeLayout>
 
@@ -51,19 +58,24 @@
                 android:layout_weight="1"
                 android:gravity="left">
 
-                <ImageView
-                    android:id="@+id/sauceType"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:background="@drawable/tab_hot_small" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/sauceType"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp" />
+
+                </LinearLayout>
 
                 <TextView
-                    android:id="@+id/sauceName"
+                    android:id="@+id/sauceNameDetails"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginLeft="10dp"
-                    android:text="Paradajz sos sa kecapom"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
@@ -83,7 +95,6 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="3dp"
                     android:gravity="center_vertical"
-                    android:text="43"
                     android:textSize="15dp" />
             </LinearLayout>
 
@@ -105,26 +116,41 @@
             android:layout_marginTop="4dp"
             android:background="@color/black"></View>
 
-        <TextView
-            android:id="@+id/sauceIngredient"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="6dp"
-            android:layout_marginRight="6dp"
-            android:layout_marginTop="10dp"
-            android:text="@string/sauce_ingredients" />
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/saucePreparation"
-            android:layout_marginLeft="6dp"
-            android:layout_marginRight="6dp"
-            android:layout_marginTop="10dp"
-            android:text="@string/sauce_preparation"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/sauceIngredient"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/sauce_ingredients"
+                    android:textSize="12dp" />
 
 
+                <TextView
+                    android:id="@+id/saucePreparation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/sauce_preparation"
+                    android:textSize="12dp" />
 
+
+            </LinearLayout>
+
+        </ScrollView>
 
 
     </LinearLayout>
@@ -134,8 +160,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="20dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginRight="12dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
         android:layout_weight="0.1"
         android:background="@color/like_dislike_tab_color"
         android:orientation="horizontal">
@@ -150,8 +176,8 @@
 
             <ImageView
                 android:id="@+id/badButton"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:background="@drawable/ic_bad_big_inactive" />
 
             <TextView
@@ -177,8 +203,8 @@
 
             <ImageView
                 android:id="@+id/goodButton"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:background="@drawable/ic_good_big_inactive" />
 
             <TextView
